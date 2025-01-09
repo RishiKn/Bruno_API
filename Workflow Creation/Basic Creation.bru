@@ -1,0 +1,31 @@
+meta {
+  name: Basic Creation
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://test-api.spendflo.com/workflows
+  body: json
+  auth: none
+}
+
+headers {
+  spendflo-auth-token: Orn8kCsKd1sk5QDyCV1AfYk/y/Yg2qlWOfnVax4zMZ4MjduQSdfQ1r4mSaBpM/yPx6ik5t70lvH+06G2HKzaUrtxAbG4wgwSndhSmzSNwtF2oe8Vrh+/qg5hLexl/KrX6S3u1mU5fNGLFFaSYC12Sdzk/KxW3GNtGiR8B8FyDt8T6gl+OFdBK6KHuX0+7RFM2F9UzlmFe6K0AhquBA==
+}
+
+body:json {
+  
+    {
+      "name": "APIsstetestinh",
+      "description": "testwets"
+     // "tags": ["AravindWF"]
+    }
+}
+
+tests {
+  test("Verify the workflow name", function () {
+      var jsonData = res.getBody();
+      expect(jsonData.ui.name).to.eql("Workflow test api");
+  });
+}
